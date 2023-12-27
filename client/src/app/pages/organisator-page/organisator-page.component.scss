@@ -1,0 +1,129 @@
+.page {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../../../assets/images/waves.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+}
+
+.right {
+    margin-left: 26px;
+    margin-right: 49px;
+}
+
+.display-container {
+    min-height: 50vh;
+    width: 100%;
+}
+
+#home {
+    width: 314px;
+    height: 67px;
+    border-radius: 20px;
+    background-color: black;
+    border: #00ffff 1px solid;
+    color: white;
+    margin-left: 30px;
+    margin-top: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+mat-icon {
+    transform: scale(1.2);
+}
+
+p {
+    padding-top: 3px;
+    margin-left: 10px;
+}
+
+.parent {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    max-height: 300px;
+    overflow-y: hidden;
+}
+
+#next-qst {
+    background-color: #dd7973;
+}
+
+#show-result {
+    background-color: #4681f4;
+    margin-top: 15%;
+}
+
+#send-result {
+    background-color: #46f446;
+}
+
+.btn-container button {
+    border: black 1px solid;
+    color: white;
+    width: 314px;
+    height: 67px;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-top: 21px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.btn-container {
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.time-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(51, 51, 51, 0.7);
+    border-radius: 8px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#panic,
+#control {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    border: none;
+}
+
+#control {
+    cursor: pointer;
+}
+
+#timer-icon {
+    color: white;
+}
+
+#bolt-icon {
+    color: yellow;
+}

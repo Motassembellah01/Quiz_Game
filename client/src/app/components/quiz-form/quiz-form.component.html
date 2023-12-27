@@ -1,0 +1,22 @@
+<form [formGroup]="quizForm" (ngSubmit)="onSubmitQuiz($event)">
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Entrer le titre du jeu</mat-label>
+            <input matInput formControlName="title" type="text" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Écrire une description pour le jeu</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="timer-input">
+            <mat-label>Entrer le temps par question (sec)</mat-label>
+            <input matInput formControlName="duration" type="number" min="10" max="60" step="5" value="10" />
+        </mat-form-field>
+
+        <div class="buttons-bar">
+            <button (click)="onSubmitQuiz('submit')" id="save" type="submit">ENREGISTRER</button>
+            <button id="cancel" (click)="onSubmitQuiz('leave')">ANNULER</button>
+        </div>
+    </div>
+</form>

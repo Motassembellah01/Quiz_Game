@@ -1,0 +1,53 @@
+<nav>
+    <a routerLink="/home" id="home">
+        <mat-icon>home</mat-icon>
+        <span>Page d'accueil</span>
+    </a>
+</nav>
+<div class="grid">
+    <div class="left">
+        <mat-selection-list class="left-list" #list [multiple]="false">
+            <h1>Questionnaires</h1>
+            <mat-list-option #option *ngFor="let quiz of quizList" [value]="quiz" (click)="selectGame(quiz.title)">
+                {{ quiz.title }}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+    <div class="right">
+        <div [@fadeInOut] *ngIf="!isButtonsDisabled" class="description">
+            <p>Description : {{ selectedQuizDescription }}</p>
+            <p>Temps alloué par question : {{ quizTime }}</p>
+        </div>
+        <table [@fadeInOut] *ngIf="!isButtonsDisabled" mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef>position</th>
+                <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="text">
+                <th mat-header-cell *matHeaderCellDef>texte</th>
+                <td mat-cell *matCellDef="let element">{{ element.text }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="points">
+                <th mat-header-cell *matHeaderCellDef>points</th>
+                <td mat-cell *matCellDef="let element">{{ element.points }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef>type</th>
+                <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <div class="btn-container">
+            <button class="try-button" [@fadeInOut] *ngIf="!isButtonsDisabled" (click)="canPlay()">Tester</button>
+            <button class="create-button" [@fadeInOut] *ngIf="!isButtonsDisabled" (click)="createGame()">Créer</button>
+        </div>
+    </div>
+</div>
+<div class="error-container">
+    <app-error-message *ngIf="!gameExist" [errorMessage]="errorMsg" [vueAttente]="false" (closeMessage)="closeMessage()"></app-error-message>
+</div>

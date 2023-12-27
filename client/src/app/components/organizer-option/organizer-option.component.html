@@ -1,0 +1,11 @@
+<div class="container" *ngIf="open && isOrganizer">
+    <div class="top">
+        <mat-icon>info</mat-icon>
+        <span>Vous avez sélectionné le joueur : </span>
+        <p>{{ playerSelected.username }}</p>
+    </div>
+    <div class="bottom">
+        <button class="bannir" (click)="banOption()">Bannir</button>
+        <button class="fermer" (click)="closeOptions()">Fermer</button>
+    </div>
+</div>

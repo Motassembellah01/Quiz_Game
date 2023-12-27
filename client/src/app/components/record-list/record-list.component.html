@@ -1,0 +1,50 @@
+<div class="records">
+    <div class="container">
+        <header>
+            <div id="title">Liste des historiques de parties</div>
+            <button (click)="resetRecords()" class="button">
+                <span class="button-text">Remise à zéro</span><mat-icon id="restart">restart_alt</mat-icon>
+            </button>
+        </header>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="column-container">
+                                <mat-icon class="arrow" (click)="sortColumn('ASC', 'name')" [ngClass]="{ active: getIsNameAsc() }"
+                                    >expand_less</mat-icon
+                                >
+                                Titre
+                                <mat-icon class="arrow" (click)="sortColumn('DESC', 'name')" [ngClass]="{ active: getIsNameDesc() }"
+                                    >expand_more</mat-icon
+                                >
+                            </div>
+                        </th>
+                        <th>
+                            <div class="column-container">
+                                <mat-icon class="arrow" (click)="sortColumn('ASC', 'date')" [ngClass]="{ active: getIsDateAsc() }"
+                                    >expand_less</mat-icon
+                                >
+                                Date de début
+                                <mat-icon class="arrow" (click)="sortColumn('DESC', 'date')" [ngClass]="{ active: getIsDateDesc() }"
+                                    >expand_more</mat-icon
+                                >
+                            </div>
+                        </th>
+                        <th>Nombre de joueurs</th>
+                        <th>Meilleur score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let record of dataSource">
+                        <td>{{ record.name }}</td>
+                        <td>{{ record.date }}</td>
+                        <td>{{ record.totalPlayer }}</td>
+                        <td>{{ record.bestScore }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

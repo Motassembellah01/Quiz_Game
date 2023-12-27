@@ -1,0 +1,65 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo span {
+    font-size: 30px;
+    color: white;
+    margin-top: 10px;
+}
+
+.sidenav-container ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidenav-container ul li {
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+    list-style-type: none;
+}
+
+.sidenav-container ul li button {
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: #12171e;
+    border: none;
+    border-radius: 12px;
+    width: 90%;
+}
+
+#importerJeu.active,
+#listeJeux.active,
+#records.active {
+    background-color: white;
+    color: black;
+}
+
+.sidenav-container ul li button:hover {
+    background-color: white;
+    color: black;
+}
+
+.sidenav-container ul li mat-icon {
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    min-width: 50px;
+}
+
+mat-divider {
+    border-top-color: white;
+    margin: 0.8rem auto;
+}
+
+button {
+    cursor: pointer;
+}

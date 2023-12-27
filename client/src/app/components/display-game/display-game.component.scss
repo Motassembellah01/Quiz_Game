@@ -1,0 +1,143 @@
+.flex {
+    width: 100%;
+}
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+}
+
+.chat {
+    color: white;
+}
+
+.displayGame {
+    width: 296px;
+    height: 289px;
+    background-color: #242333;
+    color: white;
+    margin-left: 550px;
+    border-radius: 5px;
+    scale: 0.5;
+}
+
+.body {
+    min-height: 100vh;
+}
+
+.qcm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #242333;
+    margin-left: 2.2em;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+button {
+    width: 314px;
+    height: 67px;
+    border-radius: 20px;
+    background-color: white;
+    border: #47b9a3 0.3em solid;
+    color: black;
+    margin-left: 21px;
+    margin-top: 21px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.clicked {
+    background-color: #47b9a3;
+    color: white;
+}
+
+mat-icon {
+    margin-right: 3px;
+    padding-bottom: 2px;
+}
+
+.flex-qcm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-btn {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.example-full-width {
+    width: 100%;
+    min-height: 300px;
+}
+
+.example-full-width textarea{
+    width: 100%;
+    min-height: 300px;
+}
+
+.qrl-textbox {
+    margin-left: 5%;
+}
+
+mat-form-field {
+    font-size: 1.5em;
+    padding: 2%;
+}
+
+.player-score-container {
+    width: 30%;
+    height: auto;
+    border: white 2px solid;
+    box-shadow: 8px 8px #47b9a3;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.top {
+    background-color: #47b9a3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size:2em;
+    font-weight:bold;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.bottom {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    padding: 20px;
+}

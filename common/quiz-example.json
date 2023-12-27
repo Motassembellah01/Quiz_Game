@@ -1,0 +1,57 @@
+{
+    "quizes": [
+        {
+            "id": "1a2b3c",
+            "title": "Questionnaire sur inf3405",
+            "duration": 60,
+            "lastModification": "2018-11-13T20:20:39+00:00",
+            "description": "hi",
+            "visibility": false,
+            "questions": [
+                {
+                    "type": "QCM",
+                    "text": "Parmi les mots suivants, lesquels sont des mots clés réservés en JS?",
+                    "points": 40,
+                    "choices": [
+                        {
+                            "text": "var",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "self",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "this",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "int",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "type": "QRL",
+                    "text": "Donnez la différence entre 'let' et 'var' pour la déclaration d'une variable en JS ?",
+                    "points": 60
+                },
+                {
+                    "type": "QCM",
+                    "text": "Est-ce qu'on le code suivant lance une erreur : const a = 1/NaN; ? ",
+                    "points": 20,
+                    "choices": [
+                        {
+                            "text": "Non",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Oui",
+                            "isCorrect": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

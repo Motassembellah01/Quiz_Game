@@ -1,0 +1,143 @@
+#title {
+    padding: 10px;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+body {
+    background-color: #1c1c1e;
+    min-height: 100vh;
+    height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.body-structure {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+.block {
+    width: 75%;
+    min-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 6fr; //300px auto;
+    margin: 30px;
+}
+
+.flex-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+input {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    width: 100%;
+    resize: none;
+    margin: 3px;
+}
+
+.question {
+    border-top: 3px solid #cccccc;
+    border-bottom: 3px solid #cccccc;
+}
+
+.buttons {
+    font-family: 'Trebuchet MS', sans-serif;
+    size: medium;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.buttons.big {
+    font-size: medium;
+    height: 35px;
+    width: 180px;
+}
+
+.buttons-bar-block {
+    justify-content: center;
+    text-align: center;
+    align-self: flex-end;
+}
+
+.buttons-bar-block div {
+    position: relative;
+    display: inline-block;
+}
+
+.buttons-bar-block div button {
+    width: 314px;
+    height: 67px;
+    border-radius: 20px;
+    background-color: #24a0ed;
+    border: #24a0ed 0.3em solid;
+    color: white;
+    margin-left: 21px;
+    margin-top: 21px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.buttons-bar-block div .save {
+    width: 314px;
+    height: 67px;
+    border-radius: 20px;
+    background-color: #47b9a3;
+    border: #47b9a3 0.3em solid;
+    color: white;
+    margin-left: 21px;
+    margin-top: 21px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.buttons-bar-block div .canceled {
+    width: 314px;
+    height: 67px;
+    border-radius: 20px;
+    background-color: #fe0000;
+    border: #fe0000 0.3em solid;
+    color: white;
+    margin-left: 21px;
+    margin-top: 21px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+#first-radio {
+    margin-right: 6rem;
+}
+
+mat-radio-button span {
+    color: white;
+}
+
+::ng-deep.mat-mdc-radio-button.mat-accent {
+    --mdc-radio-unselected-icon-color: white;
+    --mdc-radio-unselected-hover-icon-color: white;
+}
+
+.btn-container {
+    padding-top: 2rem;
+}

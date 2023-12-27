@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="top">
+        <mat-icon>sentiment_dissatisfied</mat-icon>
+        <span>Oups!</span>
+        <p>Quelque chose s'est mal passé</p>
+    </div>
+    <div class="bottom">
+        <div class="text-container">
+            <ul>
+                <li *ngFor="let message of this.errorMessage">{{ message }}</li>
+            </ul>
+        </div>
+        <button class="fermer" (click)="action()">Fermer</button>
+    </div>
+</div>

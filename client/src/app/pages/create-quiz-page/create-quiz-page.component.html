@@ -1,0 +1,53 @@
+<body>
+    <mat-tab-group #tabGroup [backgroundColor]="'accent'">
+        <mat-tab label="Informations du jeu">
+            <h1 id="title">{{ quiz.title }}</h1>
+            <div class="block">
+                <app-quiz-form (leaveEmitter)="leave()" (quizEmitter)="updateQuiz($event)" [quizReciever]="quiz"></app-quiz-form>
+            </div>
+        </mat-tab>
+        <mat-tab label="Ajouter une question">
+            <div class="buttons-bar-block">
+                <div><button class="buttons big" (click)="createQuestion()">AJOUTER QUESTION</button></div>
+                <div><button class="buttons big canceled" (click)="leave()">ANNULER</button></div>
+            </div>
+            <div>
+                <div *ngIf="isModified" class="question" class="block">
+                    <div class="flex-table">
+                        <mat-radio-group aria-label="Select an option" [(ngModel)]="quiz.questions[indexModified].type">
+                            <mat-radio-button id="first-radio" value="QCM"><span>Choix multiple</span></mat-radio-button>
+                            <mat-radio-button value="QRL"><span>Réponse ouverte</span></mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div>
+                        <app-qcm-form
+                            *ngIf="quiz.questions[indexModified].type === 'QCM'"
+                            [questionReceiver]="quiz.questions[indexModified]"
+                            (questionEmitter)="updateQuestion($event)"
+                            (deleteEmitter)="deleteQuestion()"
+                        >
+                        </app-qcm-form>
+
+                        <app-qrl-form
+                            *ngIf="quiz.questions[indexModified].type === 'QRL'"
+                            [questionReceiver]="quiz.questions[indexModified]"
+                            (questionEmitter)="updateQuestion($event)"
+                            (deleteEmitter)="deleteQuestion()"
+                        >
+                        </app-qrl-form>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Liste des questions">
+            <app-side-quiz-list (modifiedIndex)="modifyQuestion($event)" [quiz]="quiz"></app-side-quiz-list>
+        </mat-tab>
+        <mat-tab label="Confirmer la création">
+            <div class="buttons-bar-block btn-container">
+                <div><button class="buttons big save" type="submit" (click)="saveQuiz()">SAUVEGARDER QUIZ</button></div>
+                <div><button class="buttons big canceled" (click)="leave()">ANNULER</button></div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</body>

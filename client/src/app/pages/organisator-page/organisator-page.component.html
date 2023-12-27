@@ -1,0 +1,94 @@
+<div class="page">
+    <div class="left">
+        <app-players-list [mode]="'org'"></app-players-list>
+        <button id="home" (click)="leave()">
+            <mat-icon>home</mat-icon>
+            <p>Page d'accueil</p>
+        </button>
+    </div>
+    <div class="right">
+        <app-top-bar></app-top-bar>
+        <div class="display-container">
+            <app-graph-result [correctionMode]="correctionMode" (correctionModeChange)="onCorrectionMode()"></app-graph-result>
+            <app-evaluation-area (allCorrectedScores)="onAllCorrectedScores($event)"></app-evaluation-area>
+            <app-grades-organisateur [allQrlPoints]="allQrlPoints" *ngIf="answersQRLCorrected"></app-grades-organisateur>
+        </div>
+        <div class="parent">
+            <div class="btn-container">
+                <button
+                    *ngIf="!isGameDone && isNextQuestionAvailable"
+                    [@fadeInOut]
+                    [ngStyle]="{
+                        cursor: isNextQuestionAvailable ? 'pointer' : 'not-allowed',
+                        'background-color': isNextQuestionAvailable ? '#dd7973' : '#ccc'
+                    }"
+                    [disabled]="!isNextQuestionAvailable"
+                    id="next-qst"
+                    (click)="nextquestion()"
+                >
+                    Question suivante
+                </button>
+                <button
+                    *ngIf="isGameDone"
+                    [@fadeInOut]
+                    [ngStyle]="{
+                        cursor: isGameDone ? 'pointer' : 'not-allowed',
+                        'background-color': isGameDone ? '#4681f4' : '#ccc'
+                    }"
+                    [disabled]="!isGameDone"
+                    id="show-result"
+                    (click)="showResult()"
+                >
+                    Présenter les résultats
+                </button>
+                <button
+                    *ngIf="answersQRLCorrected"
+                    [@fadeInOut]
+                    [ngStyle]="{
+                        cursor: answersQRLCorrected ? 'pointer' : 'not-allowed',
+                        'background-color': answersQRLCorrected ? '#4681f4' : '#ccc'
+                    }"
+                    [disabled]="!answersQRLCorrected"
+                    id="send-result"
+                    (click)="sendResult()"
+                >
+                    Envoyer les résultats
+                </button>
+            </div>
+            <div class="time-container">
+                <app-display-timer></app-display-timer>
+                <div class="button-container">
+                    <button
+                        [@fadeInOut]
+                        *ngIf="showTimerButton"
+                        (click)="toggleStartPlay()"
+                        id="control"
+                        [ngStyle]="{
+                            'background-color': timerPlay ? '#FF0256' : '#00b84c'
+                        }"
+                    >
+                        <mat-icon *ngIf="!timerPlay">play_arrow</mat-icon>
+                        <mat-icon *ngIf="timerPlay">pause</mat-icon>
+                    </button>
+                    <button
+                        [@fadeInOut]
+                        *ngIf="showTimerButton"
+                        id="panic"
+                        [ngStyle]="{
+                            cursor: panicEnable ? 'pointer' : 'not-allowed',
+                            'background-color': panicEnable ? '#FF007F' : '#ccc'
+                        }"
+                        [disabled]="!panicEnable"
+                        (click)="startPanicMode()"
+                    >
+                        <mat-icon id="timer-icon">timer</mat-icon>
+                        <mat-icon id="bolt-icon">bolt</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="chat">
+                <app-chat></app-chat>
+            </div>
+        </div>
+    </div>
+</div>

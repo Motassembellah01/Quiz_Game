@@ -1,0 +1,56 @@
+<div class="sidebar">
+    <div class="top">
+        <h2>{{ this.mode !== 'org' ? 'Score' : 'Liste des joueurs' }}</h2>
+        <mat-divider id="divider"></mat-divider>
+    </div>
+    <div class="player-container">
+        <app-sort-player *ngIf="this.mode === 'org'"></app-sort-player>
+        <ul *ngIf="this.mode !== 'game'">
+            <li class="player" *ngFor="let player of playerScore">
+                <span
+                    [ngStyle]="{
+                        'text-decoration': player.status ? 'none' : 'line-through',
+                        'text-decoration-thickness': player.status ? '0rem' : '0.2rem',
+                        'text-decoration-color': player.status ? '' : 'white'
+                    }"
+                    [ngClass]="{
+                        abandonStyle: !player.status,
+                        redColor: !player.interaction && player.status,
+                        yellowColor: player.interaction && !player.submit && player.status,
+                        greenColor: player.submit && player.status
+                    }"
+                    id="username"
+                    >{{ player.name }} :
+                </span>
+                <span
+                    id="score"
+                    [ngClass]="{
+                        abandonStyle: !player.status,
+                        redColor: !player.interaction && player.status,
+                        yellowColor: player.interaction && !player.submit && player.status,
+                        greenColor: player.submit && player.status
+                    }"
+                >
+                    {{ player.score }} pts</span
+                >
+                <span
+                    [ngClass]="{
+                        abandonStyle: !player.status,
+                        redColor: !player.interaction && player.status,
+                        yellowColor: player.interaction && !player.submit && player.status,
+                        greenColor: player.submit && player.status
+                    }"
+                    class="chat-icon"
+                    (click)="player.status && toggleChat(player)"
+                >
+                    <span *ngIf="!player.chat"><i class="fas fa-comment-slash icon"></i></span>
+                    <span *ngIf="player.chat"><i class="fas fa-comment-dots icon"></i></span>
+                </span>
+            </li>
+        </ul>
+        <div class="score" *ngIf="this.mode === 'game'">
+            <span id="text">Score actuel : </span>
+            <span id="points">{{ playerPoints }} points</span>
+        </div>
+    </div>
+</div>

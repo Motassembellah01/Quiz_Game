@@ -1,0 +1,40 @@
+<div class="sidenav-container">
+    <div class="top">
+        <div class="logo">
+            <span>Admin</span>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <ul>
+        <li>
+            <button [ngClass]="{ active: activeTab === 1 }" (click)="btn1EventHandler()" id="listeJeux">
+                <mat-icon>list</mat-icon>
+                <span>Liste des jeux</span>
+            </button>
+        </li>
+        <li>
+            <button routerLink="/create-quiz">
+                <mat-icon>add</mat-icon>
+                <span>Créer un nouveau jeu</span>
+            </button>
+        </li>
+        <li>
+            <button [ngClass]="{ active: activeTab === 2 }" (click)="btn2EventHandler()" id="importerJeu">
+                <mat-icon>upload</mat-icon>
+                <span>Importer un jeu</span>
+            </button>
+        </li>
+        <li>
+            <button [ngClass]="{ active: activeTab === 3 }" (click)="btn3EventHandler()" id="records">
+                <mat-icon>list</mat-icon>
+                <span>Historique</span>
+            </button>
+        </li>
+        <li>
+            <button class="home" (click)="returnHome()">
+                <mat-icon>home</mat-icon>
+                <span>Page d'accueil</span>
+            </button>
+        </li>
+    </ul>
+</div>

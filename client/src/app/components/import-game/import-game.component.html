@@ -1,0 +1,51 @@
+<div class="window center-white" *ngIf="!fileCreated">
+    <div *ngIf="!isTitleWrong">
+        <header class="flex text-color">
+            <h1>Télécharger un nouveau jeu</h1>
+        </header>
+        <input type="file" id="file" #fileInput (change)="uploadFile($event)" accept=".json" />
+        <label class="flex-spaceE" for="file">
+            <mat-icon class="upload">upload_file</mat-icon>
+            <p>Choisir un fichier JSON à importer</p>
+        </label>
+        <p id="compterFichier">{{ fichierSelect }}</p>
+        <div class="bottom" *ngIf="isFileUploaded">
+            <div class="flex">
+                <div class="file-container flex-spaceB">
+                    <p>{{ uploadedFile.name }}</p>
+                    <p>{{ uploadedFile.size / 1000 }}KB</p>
+                </div>
+            </div>
+            <div class="btn-container flex-spaceE">
+                <button class="flex" mat-raised-button color="warn" class="action" (click)="clearInput()">Annuler</button>
+                <button class="flex" type="submit" mat-raised-button color="primary" class="action" (click)="sendFileToServer()">
+                    <mat-icon>arrow_downward</mat-icon>Importer
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="form-container" *ngIf="isTitleWrong">
+        <h1 class="flex text-color">Veuillez entrer un nouveau titre</h1>
+        <form class="flex" [formGroup]="importForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>Entrer un titre</mat-label>
+                <input matInput formControlName="title" required />
+                <mat-error *ngIf="importForm.get('title')?.invalid && importForm.get('title')?.touched"> Le Titre n'est pas unique </mat-error>
+            </mat-form-field>
+            <button [disabled]="importForm.invalid" type="submit" mat-raised-button color="primary" class="action flex" (click)="sendFileToServer()">
+                <mat-icon>arrow_downward</mat-icon>Importer
+            </button>
+        </form>
+        <div class="btn-annuler flex">
+            <button id="annuler" mat-raised-button color="warn" class="action flex" (click)="clearInput()">Annuler</button>
+        </div>
+    </div>
+</div>
+
+<div class="file-created center-white" *ngIf="fileCreated">
+    <div class="icon-container flex">
+        <mat-icon [ngStyle]="{ color: '#198754' }">check_circle</mat-icon>
+    </div>
+    <h1 class="flex text-color">Complété</h1>
+    <p class="flex text-color">Vous avez importer le fichier avec succès!</p>
+</div>

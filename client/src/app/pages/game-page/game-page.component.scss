@@ -1,0 +1,186 @@
+nav {
+    padding-top: 1em;
+    padding-left: 2em;
+    background-color: #1e1e1e;
+    padding-bottom: 1.5em;
+}
+
+#home {
+    background-color: #212121;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    position: relative;
+    padding: 0;
+    text-decoration: none;
+}
+
+#home:after {
+    content: '';
+    position: absolute;
+    background-color: #bb86fc;
+    transition-duration: 0.3s;
+    transition-property: transform, opacity;
+    height: 0.2em;
+    left: 0;
+    width: 0;
+    bottom: -1em;
+    transition: 0.3s;
+}
+
+#home:hover:after {
+    width: 100%;
+}
+
+#home mat-icon {
+    color: #bb86fc;
+    margin-right: 0.5em;
+    transform: scale(1.2);
+}
+
+#home span {
+    color: #bb86fc;
+    font-size: 2em;
+}
+
+.grid {
+    width: 100%;
+    min-height: 100vh;
+    border-width: 5px;
+    color: #fdfeff;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    background-image: url(../../../assets/images/waves.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.left h1 {
+    color: #ff7597;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+}
+
+.left-list {
+    background-color: #333333;
+    padding: 0.5rem;
+    margin: 3%;
+    border-radius: 2%;
+}
+
+.firstline {
+    margin-right: 0%;
+}
+
+.play-button {
+    margin-top: 200px;
+}
+
+.create-button {
+    color: #000;
+    margin-left: 100px;
+    height: 65px;
+    min-width: 15%;
+    border-radius: 15px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    background-color: #03dac6;
+    cursor: pointer;
+    border: none;
+}
+
+.try-button {
+    color: #000;
+    margin-left: 100px;
+    height: 65px;
+    min-width: 15%;
+    border-radius: 15px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    background-color: #03dac6;
+    cursor: pointer;
+    border: none;
+}
+
+.play-button button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.time {
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.description {
+    background-color: #303030;
+    color: #ff7597;
+    font-size: 1.5em;
+    padding: 1rem;
+    margin: 1%;
+    border-radius: 8px;
+}
+
+.description p {
+    margin-bottom: 0.5em;
+}
+
+table {
+    padding: 1rem;
+    min-width: 98%;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.mdc-data-table__header-cell {
+    color: #00bcd4;
+    font-size: 1.3rem;
+}
+
+.mdc-data-table__cell {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.table {
+    background-color: #2c2c2c;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+error-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+::ng-deep.mdc-list-item:focus .mdc-list-item__primary-text {
+    --mdc-list-list-item-focus-label-text-color: white;
+}
+
+::ng-deep.mdc-list-item__primary-text {
+    --mdc-list-list-item-label-text-color: white;
+    --mdc-list-list-item-label-text-size: 1.3rem;
+}
+
+::ng-deep.mdc-list-item:hover .mdc-list-item__primary-text {
+    --mdc-list-list-item-hover-label-text-color: white;
+}
+
+::ng-deep.mat-mdc-list-option .mdc-radio .mdc-radio__native-control:enabled:not(:checked) + .mdc-radio__background .mdc-radio__outer-circle {
+    --mdc-radio-unselected-icon-color: white;
+    --mdc-radio-unselected-hover-icon-color: white;
+}

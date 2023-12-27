@@ -1,0 +1,17 @@
+<div class="evaluation-area" *ngIf="correctionTime">
+    <h2>Évaluation de {{ currentEvaluation[0] }}</h2>
+    <div class="answer-section">
+        <h3>Réponse :</h3>
+        <p>"{{ currentEvaluation[1] }}"</p>
+    </div>
+    <div class="rating-section">
+        <div class="rating-buttons">
+            <button id="zero-percent" (click)="selectPercentage(0)" [ngClass]="isSelected[0] ? 'selected' : 'unselected'">0%</button>
+            <button id="fifty-percent" (click)="selectPercentage(50)" [ngClass]="isSelected[1] ? 'selected' : 'unselected'">50%</button>
+            <button id="hundred-percent" (click)="selectPercentage(100)" [ngClass]="isSelected[2] ? 'selected' : 'unselected'">100%</button>
+        </div>
+        <button id="validation" (click)="finalize()" [disabled]="!isOneSelectedButton()" [ngClass]="{ 'clear-button': isOneSelectedButton }">
+            <mat-icon>send</mat-icon> Valider
+        </button>
+    </div>
+</div>

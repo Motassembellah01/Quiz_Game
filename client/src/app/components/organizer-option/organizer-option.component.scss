@@ -1,0 +1,107 @@
+.container {
+    width: 80vh;
+    height: 55%;
+    margin: auto;
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.top {
+    background-color: #23b16e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top mat-icon {
+    transform: scale(6);
+    color: white;
+    margin-top: 6rem;
+    margin-bottom: 2.5rem;
+}
+
+.top span {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.8em;
+    color: white;
+}
+
+.top p {
+    color: white;
+    font-size: 1.8em;
+    margin-bottom: 1rem;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+.text-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    width: 50%;
+}
+
+.bottom button {
+    color: white;
+    cursor: pointer;
+    border-radius: 4rem;
+    font-size: 1.5em;
+    padding: 0.7em 2.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1.2em;
+}
+
+li {
+    color: #333;
+    font-weight: lighter;
+    margin-bottom: 0.3em;
+    margin-top: 0.3em;
+}
+
+.button {
+  background-color: initial;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  transition: box-shadow .2s;
+}
+
+.bannir {
+    background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+    border: 0;
+}
+
+.bannir:hover {
+    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  }
+
+.fermer {
+    background-color: rgb(134, 202, 202);
+}
+
+.fermer {
+    background-image: linear-gradient(-180deg, #97e4c6, #34b2e4);
+    border: 0;
+}
+
+.fermer:hover {
+    box-shadow: rgba(0, 253, 211, 0.5) 0 3px 8px;
+}

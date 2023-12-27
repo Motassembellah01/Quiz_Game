@@ -1,0 +1,12 @@
+<div class="grid">
+    <div class="left">
+        <app-players-list [mode]="mode"></app-players-list>
+        <button (click)="abandonGame()">
+            <mat-icon>logout</mat-icon>
+            <p>Abandonner la partie</p>
+        </button>
+    </div>
+    <div class="right">
+        <app-display-game [mode]="mode"></app-display-game>
+    </div>
+</div>

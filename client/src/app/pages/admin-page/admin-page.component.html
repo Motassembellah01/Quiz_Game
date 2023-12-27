@@ -1,0 +1,34 @@
+<div class="login" *ngIf="!connected">
+    <app-auth (connect)="grantAccess()"></app-auth>
+</div>
+
+<div class="body" *ngIf="connected">
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened>
+            <app-sidenav
+                (showImportViewEvent)="changeViewAdmin()"
+                (showGameListEvent)="changeToGameList()"
+                (showRecords)="changeToRecords()"
+            ></app-sidenav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="card-container" *ngIf="showGameList">
+                <app-admin-card
+                    *ngFor="let quizAffiche of this.quizList"
+                    [quiz]="quizAffiche"
+                    (updatePage)="updatePage()"
+                    (deleteError)="errorHandler($event)"
+                ></app-admin-card>
+            </div>
+            <div *ngIf="showImportView">
+                <app-import-game (updatePage)="updatePage()" (importErrorRequest)="errorHandler($event)"></app-import-game>
+            </div>
+            <div class="displayError" *ngIf="showErrorMessage">
+                <app-error-message [errorMessage]="giveErrorMessage" [vueAttente]="false" (closeMessage)="closeMessage()"></app-error-message>
+            </div>
+            <div *ngIf="showRecordList">
+                <app-record-list></app-record-list>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

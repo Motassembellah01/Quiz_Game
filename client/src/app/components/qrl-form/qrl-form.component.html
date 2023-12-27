@@ -1,0 +1,16 @@
+<form [formGroup]="qrlForm" (ngSubmit)="onSubmitQRL()">
+    <mat-form-field class="example-full-width" id="first-form-field">
+        <mat-label>Écrire une description pour la question</mat-label>
+        <textarea matInput required formControlName="text" [(ngModel)]="question.text"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="points-input">
+        <mat-label>Nombre de points :</mat-label>
+        <input matInput [(ngModel)]="question.points" formControlName="points" type="number" min="10" max="100" step="10" value="10" />
+    </mat-form-field>
+
+    <div class="buttons-bar">
+        <button id="save" type="submit">ENREGISTRER</button>
+        <button id="delete" (click)="deleteQuestion()">SUPPRIMER</button>
+    </div>
+</form>

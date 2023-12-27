@@ -1,0 +1,17 @@
+<div class="side-navigation">
+    <div *ngFor="let question of quiz.questions; index as i">
+        <button class="element" mat-button (click)="changeOrderQuestion(i, 'up')">
+            <mat-icon [ngStyle]="{ color: 'black' }">keyboard_arrow_up</mat-icon>
+        </button>
+        <div class="side-navigation-question" (click)="modifyQuestion(i)">
+            <div class="element">Question #{{ i + 1 }}</div>
+            <span class="element">{{ question.text }}</span>
+        </div>
+        <button class="element" mat-button (click)="changeOrderQuestion(i, 'down')">
+            <mat-icon [ngStyle]="{ color: 'black' }">keyboard_arrow_down</mat-icon>
+        </button>
+        <div>
+            <mat-divider></mat-divider>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="casing">
+    <div class="window">
+        <div class="header">
+            <div class="character-count">{{ characterLimit }}</div>
+            CLAVARDAGE
+        </div>
+        <div class="chat-container">
+            <div class="chat-messages" #chatMessages>
+                <div *ngFor="let message of chatMessagesList" [ngClass]="message.cssClass">
+                    <span class="message-sender">{{ message.sender }}</span>
+                    <span class="message-content">{{ message.content }} </span>
+                    <span class="message-time">[{{ message.time | date: 'short' }}]</span>
+                </div>
+            </div>
+        </div>
+        <div class="new-chat">
+            <input
+                [ngClass]="{ chatBlocked: isChatBlocked }"
+                [(ngModel)]="messageInput"
+                (focus)="chatFocus()"
+                (blur)="chatNotFocus()"
+                (keydown.enter)="sendMessage()"
+                (input)="onInputChange($event)"
+                placeholder="Rentrez votre message ici."
+                [disabled]="hasAbandonedGame"
+                maxlength="200"
+            />
+            <button id="send" (click)="!isChatBlocked && sendMessage()" [disabled]="hasAbandonedGame">
+                <img src="https://cdn-icons-png.flaticon.com/512/3682/3682321.png" width="20" height="20" />
+            </button>
+        </div>
+    </div>
+</div>

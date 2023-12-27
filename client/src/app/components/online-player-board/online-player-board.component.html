@@ -1,0 +1,28 @@
+<div class="online-player-board-container">
+    <div class="logo">
+        <span>Joueurs connectés</span>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="player-container">
+        <ul *ngIf="playersArray[0] !== ''">
+            <li *ngFor="let player of playersArray" (click)="openPlayerDetails(player)">
+                <span class="player-name">{{ player }}</span>
+                <span class="status-bubble" *ngIf="player !== ''"></span>
+            </li>
+        </ul>
+    </div>
+    <div class="ff-button-container">
+        <button
+            [disabled]="isGameStarting"
+            [ngStyle]="{
+                cursor: isGameStarting ? 'not-allowed' : 'pointer',
+                'background-color': isGameStarting ? '#ccc' : 'red'
+            }"
+            class="ff-button"
+            (click)="leave()"
+        >
+            <mat-icon>logout</mat-icon>
+            <span>Quitter</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="waiting-board">
+    <div *ngIf="!isGameStarting">
+        <header>
+            <div id="toggle-button" *ngIf="isOrganizer" class="locker-board wraper">
+                <label class="switch-wrap" for="something">
+                    <input type="checkbox" id="something" (click)="isOrganizer && toggleGameLock()" />
+                    <div class="switch"></div>
+                </label>
+                <p *ngIf="!isGameLocked" class="label-text">Verouiller la salle</p>
+                <p *ngIf="isGameLocked" class="label-text">Déverrouiller la salle</p>
+                <mat-icon class="lock" *ngIf="!isGameLocked">lock_open</mat-icon>
+                <mat-icon class="lock" *ngIf="isGameLocked">lock</mat-icon>
+            </div>
+            <span *ngIf="isOrganizer" class="title"> Quiz : {{ quiz.title }} </span>
+        </header>
+        <div class="quiz-title">
+            <div class="code-access-room" *ngIf="isOrganizer && !isGameLocked">
+                <span>Code d'accès : {{ theRoomCode }}</span>
+                <button id="copy" [cdkCopyToClipboard]="theRoomCode" (click)="copyCode()">
+                    <mat-icon *ngIf="!isCopied">content_copy</mat-icon>
+                    <mat-icon *ngIf="isCopied">done</mat-icon>
+                </button>
+            </div>
+            <div *ngIf="isGameLocked; else waitingMessage" class="waiting-message">
+                <p *ngIf="!isOrganizer">La partie va bientôt commencer</p>
+                <p *ngIf="isOrganizer && playerCount === 0">Aucun joueur pour débuter la partie</p>
+                <button [@fadeInOut] *ngIf="isOrganizer && playerCount >= 1" (click)="startGame()" class="start-button">Commencer</button>
+            </div>
+        </div>
+        <ng-template #waitingMessage>
+            <div class="waiting-message">
+                <span *ngIf="playerCount === 0"> Aucun joueur a rejoint, en attente d'autres</span>
+                <span *ngIf="playerCount === 1"> 1 joueur a rejoint, en attente d'autres</span>
+                <span *ngIf="playerCount > 1"> {{ playerCount }} joueurs ont rejoint, en attente d'autres</span>
+            </div>
+        </ng-template>
+    </div>
+    <div id="countdown" *ngIf="isGameStarting">
+        <h2>La partie commence!</h2>
+        <h2>Préparer vous à tester vos connaissances</h2>
+        <app-display-timer></app-display-timer>
+    </div>
+
+    <video *ngIf="isGameStarting" autoplay loop muted>
+        <source src="./assets/pexels-colors-motion-graphics-11354070 (2160p).mp4" type="video/mp4" />
+    </video>
+</div>

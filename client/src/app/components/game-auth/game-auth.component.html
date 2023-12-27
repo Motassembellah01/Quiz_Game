@@ -1,0 +1,20 @@
+<div class="popup">
+    <h1>Code</h1>
+    <div class="form-container">
+        <mat-form-field>
+            <mat-label>Entrez votre code</mat-label>
+            <input matInput [(ngModel)]="userPassword" (keydown.enter)="validate()" autofocus />
+        </mat-form-field>
+    </div>
+    <h1>Nom d'utilisateur</h1>
+    <div class="form-container">
+        <mat-form-field>
+            <mat-label>Entrez votre nom d'utilisateur</mat-label>
+            <input matInput [(ngModel)]="userName" (keydown.enter)="validate()" />
+        </mat-form-field>
+    </div>
+    <div class="flexbox">
+        <button id="entrer" mat-raised-button color="primary" (click)="validate()"><mat-icon>lock</mat-icon> Entrer</button>
+        <button id="annuler" color="warn" routerLink="/home"><mat-icon>close</mat-icon> <span>Annuler</span></button>
+    </div>
+</div>

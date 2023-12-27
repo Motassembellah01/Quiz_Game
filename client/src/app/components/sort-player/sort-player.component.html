@@ -1,0 +1,23 @@
+<div class="sorting-container">
+    <div class="sorting-by-name">
+        <div clas="direction">
+            <mat-icon (click)="toggleSort('Name', 'up')" [ngClass]="{ isSelected: isDirectionNameUp }">expand_less</mat-icon>
+            <span>Nom</span>
+            <mat-icon (click)="toggleSort('Name', 'down')" [ngClass]="{ isSelected: isDirectionNameDown }">expand_more</mat-icon>
+        </div>
+    </div>
+    <div class="sorting-by-point">
+        <div clas="direction">
+            <mat-icon (click)="toggleSort('Point', 'up')" [ngClass]="{ isSelected: isDirectionPointUp }">expand_less</mat-icon>
+            <span>Point</span>
+            <mat-icon (click)="toggleSort('Point', 'down')" [ngClass]="{ isSelected: isDirectionPointDown }">expand_more</mat-icon>
+        </div>
+    </div>
+    <div class="sorting-by-state">
+        <div clas="direction">
+            <mat-icon (click)="toggleSort('State', 'up')" [ngClass]="{ isSelected: isDirectionStateUp }">expand_less</mat-icon>
+            <span>Etat</span>
+            <mat-icon (click)="toggleSort('State', 'down')" [ngClass]="{ isSelected: isDirectionStateDown }">expand_more</mat-icon>
+        </div>
+    </div>
+</div>

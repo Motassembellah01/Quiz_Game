@@ -1,0 +1,41 @@
+.sorting-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white;
+    margin-top: 2vh;
+}
+
+.sorting-by-name {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(143, 86, 165, 0.74);
+    border-radius: 2vh;
+}
+
+.sorting-by-point {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(143, 86, 165, 0.74);
+    border-radius: 2vh;
+}
+
+.sorting-by-state {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(143, 86, 165, 0.74);
+    border-radius: 2vh;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+mat-icon:hover {
+    transform: scale(1.4);
+}
+
+.isSelected {
+    transform: scale(1.4);
+    color: rgb(255, 174, 0);
+}

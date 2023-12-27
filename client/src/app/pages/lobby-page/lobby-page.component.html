@@ -1,0 +1,15 @@
+<div class="login" *ngIf="!connected">
+    <app-game-auth (connect)="grantAccess()"></app-game-auth>
+</div>
+
+<div class="container" *ngIf="connected">
+    <div class="online-board">
+        <app-online-player-board (playerCount)="updatePlayerCount($event)" [isGameStarting]="isGameStarting"></app-online-player-board>
+    </div>
+    <div class="waiting-board">
+        <app-waiting-board [playerCount]="this.playerCount" [isGameStarting]="isGameStarting"></app-waiting-board>
+        <div class="options-player" *ngIf="!isGameStarting && getIsPlayerSelected()">
+            <app-organizer-option></app-organizer-option>
+        </div>
+    </div>
+</div>

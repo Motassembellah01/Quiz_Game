@@ -1,0 +1,128 @@
+h2 {
+    color: #0d47a1;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 5px;
+    cursor: pointer;
+    transition: 
+        background-color 0.3s,
+        color 0.3s;
+    height: 60px;
+    width: 80px;
+    font-weight: bolder;
+    color: black;
+    font-size: medium;
+    box-shadow:
+        rgba(0, 0, 0, 0.16) 0px 3px 6px,
+        rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+    border: 10px solid black;
+}
+
+.rating-buttons button:hover  {
+    filter: brightness(85%);
+}
+
+#zero-percent {
+    background-color: #fc6565;
+}
+
+#fifty-percent {
+    background-color: #ffb444;
+}
+
+#hundred-percent {
+    background-color: #62f762;
+}
+
+.evaluation-area {
+    max-width: 800px;
+    margin-top: 40px;
+    margin-left: 40px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.answer-section,
+.rating-section {
+    margin-bottom: 20px;
+}
+
+.answer-section p {
+    font-style: italic;
+}
+
+.rating-buttons button {
+    padding: 5px;
+    margin-right: 5px;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 10px;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.rating-buttons {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.rating-section {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#validation {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background-color: white;
+    border: #47b9a3 0.3em solid;
+    height: 67px;
+    font-size: large;
+}
+
+#validation:hover .clear-button:enabled {
+    background-color: #47b9a3;
+    color: white;
+    
+}
+
+.selected {
+    border: 5px solid black;
+}
+
+.unselected {
+    border: 2.5px solid black;
+}
+
+.clear-button:disabled {
+    opacity: 0.6; 
+}

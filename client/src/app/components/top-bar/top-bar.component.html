@@ -1,0 +1,9 @@
+<div>
+    <header *ngIf="isShowQuestion">
+        <span id="question">Question : {{ question }}</span>
+        <span id="pointage">Nombres de points : {{ points }} points</span>
+    </header>
+    <header id="message" *ngIf="!isShowQuestion">
+        <h2>La prochaine question commence sous peu!</h2>
+    </header>
+</div>

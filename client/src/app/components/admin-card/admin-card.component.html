@@ -1,0 +1,28 @@
+<mat-card class="quiz-card" [ngClass]="this.quiz.visibility ? 'visible' : 'invisible'">
+    <mat-card-header>
+        <mat-card-title>{{ this.quiz.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <i>{{ this.quiz.visibility ? 'Visible' : 'Caché' }}</i>
+        <mat-card-subtitle>Modification faite le : {{ this.quiz.lastModification.split('T')[0] }}</mat-card-subtitle>
+    </mat-card-content>
+    <div class="top-btn">
+        <button mat-button id="visibilityButton" (click)="toggleVisibility()">
+            <mat-icon>
+                {{ this.quiz.visibility ? 'visibility' : 'visibility_off' }}
+            </mat-icon>
+        </button>
+        <button mat-button (click)="editGame()" id="editButton">
+            <mat-icon> edit </mat-icon>
+        </button>
+    </div>
+    <div class="bottom-btn">
+        <button mat-button id="downloadButton" (click)="exportfile.click()">
+            <mat-icon> download </mat-icon>
+            <a #exportfile [href]="url" [download]="fileName" id="export"></a>
+        </button>
+        <button mat-button id="deleteButton" (click)="deleteGame()">
+            <mat-icon> delete </mat-icon>
+        </button>
+    </div>
+</mat-card>

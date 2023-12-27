@@ -1,0 +1,102 @@
+.container {
+    min-height: 100vh;
+    height: auto;
+    background-image: url(../../../assets/images/waves.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+header h1 {
+    color: #ec4899;
+    //background: linear-gradient(to right, #ec4899, #bb86fc);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    transition: 0.4s ease-in-out;
+}
+
+.button {
+    margin-top: 10px;
+    margin: 20px;
+    padding: 30px 40px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 3rem;
+    border: solid;
+    border-color: var(--lightBlue);
+    background-color: var(--black);
+    border-width: 5px;
+    color: #fdfeff;
+    cursor: pointer;
+}
+
+.button:hover {
+    border-color: #fdfeff;
+}
+
+.team-name {
+    color: white;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+}
+
+.server-message {
+    justify-content: center;
+    width: 20%;
+    min-width: min-content;
+}
+
+.flexContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+img {
+    width: 10%;
+    height: auto;
+    transform: scale(1.5);
+}
+
+footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+footer h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    color: white;
+    text-shadow:
+        -1px 0 black,
+        0 1px black,
+        1px 0 black,
+        0 -1px black;
+}
